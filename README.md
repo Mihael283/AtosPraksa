@@ -20,7 +20,7 @@
     - ukoliko je broj jednak ili veći od 75, treba prekinuti procesuiranje intervala te ispisati vrijednost brojača
 -----
 
-6. [x] <span style="color: rgba(242, 38, 19, 0.8);">Kreiraj program koji će koristeći for petlje automatizirati ispis tablice množenja u ovom obliku, te umjesto "Ime" treba ispisati ime uneseno s konzole i pri tome pripaziti da zadnje slovo imena bude poravnato s desnim rubom tablice.</span>
+6.Kreiraj program koji će koristeći for petlje automatizirati ispis tablice množenja u ovom obliku, te umjesto "Ime" treba ispisati ime uneseno s konzole i pri tome pripaziti da zadnje slovo imena bude poravnato s desnim rubom tablice.
 
 -------------------------------
 : : :  TABLICA  MNOZENJA  : : :
