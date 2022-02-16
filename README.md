@@ -22,7 +22,6 @@
 
 6. [x] <span style="color: rgba(242, 38, 19, 0.8);">Kreiraj program koji će koristeći for petlje automatizirati ispis tablice množenja u ovom obliku, te umjesto "Ime" treba ispisati ime uneseno s konzole i pri tome pripaziti da zadnje slovo imena bude poravnato s desnim rubom tablice.</span>
 
-```
 -------------------------------
 : : :  TABLICA  MNOZENJA  : : :
 -------------------------------
@@ -40,7 +39,6 @@
 -------------------------------
 :  :  :  :  :  :  :  :  :by Ime
 -------------------------------
-```
 -----
 
 7.Kreiraj program koji će ispisati koliko ima brojeva djeljivih sa 6 u intervalu između neka dva prirodna broja unesena s konzole.
@@ -54,7 +52,6 @@ P  U  S  Č  P  S  N
 15 16 17 18 19 20 21
 22 23 24 25 26 27 28
 29 30 31
-```
 -----
 
 9.Luka je vaš dobar prijatelj. Nedavno vam je spomenuo kako bi volio imati grafičko rješenje prikaza njegovog troška struje njegove „krušne“ peći kroz godinu (on je naime pizza majstor i ima svoj restoran). Račun mu stalno varira, ali nikada ne prelazi 4500kn. Prvo ste mu rekli da još ne znate raditi grafički prikaz u Javi, ali vam je bilo žao ne ponuditi mu nikakvo rješenje pa ste na papiru nacrtali ovakav graf i rekli da znanje za napraviti ovakav prikaz imate. Također ste mu pojasnili kako će morati unijeti plaću za svaki pojedini mjesec, a onda će program iscrtati graf. Upozorili ste ga kako će vrijednosti plaće biti aproksimirane. Primjerice mjesečna plaća koja iznosi od 1501kn pa sve do 2500kn, na grafu će biti obilježena iksićem uz vrijednost 2000kn. On se naposljetku složio s vašim prijedlogom i od srca zahvalio. Stoga kreirajte program kojim ćete pomoći Luki.
