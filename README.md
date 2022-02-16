@@ -1,5 +1,5 @@
 
-                                                    Atos Praksa - Mihael Španović
+Atos Praksa - Mihael Španović
 
 1.Instaliraj program Eclipse. Na [stranici](http://www.eclipse.org/downloads/) nalazi se popis različitih alata iz Eclipse porodice. Za pripremu prakse bit će dovoljan Eclipse Standard. Odaberi verziju operacijskog sustava koji koristiš i preuzmi alat. Eclipse se ne instalira, nego jednostavno „raspakira“ na željenu lokaciju.
 
