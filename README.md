@@ -47,7 +47,7 @@
 -----
 
 8.Kreiraj program koji će s konzole učitati redni broj mjeseca u nekoj prijestupnoj godini. Napraviti provjeru je li uneseni redni broj mjeseca ispravan (ne postoji npr. 15. mjesec), a zatim ispisati kalendar tog mjeseca u obliku. Pretpostavlja se kako prvi u mjesecu pada na ponedjeljak. Također, treba ispisati onoliko dana koliko ih taj mjesec po klasičnom kalendaru doista ima.
-```
+
 P  U  S  Č  P  S  N
  1  2  3  4  5  6  7
  8  9 10 11 12 13 14
@@ -59,7 +59,7 @@ P  U  S  Č  P  S  N
 
 9.Luka je vaš dobar prijatelj. Nedavno vam je spomenuo kako bi volio imati grafičko rješenje prikaza njegovog troška struje njegove „krušne“ peći kroz godinu (on je naime pizza majstor i ima svoj restoran). Račun mu stalno varira, ali nikada ne prelazi 4500kn. Prvo ste mu rekli da još ne znate raditi grafički prikaz u Javi, ali vam je bilo žao ne ponuditi mu nikakvo rješenje pa ste na papiru nacrtali ovakav graf i rekli da znanje za napraviti ovakav prikaz imate. Također ste mu pojasnili kako će morati unijeti plaću za svaki pojedini mjesec, a onda će program iscrtati graf. Upozorili ste ga kako će vrijednosti plaće biti aproksimirane. Primjerice mjesečna plaća koja iznosi od 1501kn pa sve do 2500kn, na grafu će biti obilježena iksićem uz vrijednost 2000kn. On se naposljetku složio s vašim prijedlogom i od srca zahvalio. Stoga kreirajte program kojim ćete pomoći Luki.
 
-```
+
 5000kn - |
          |                              x
 4000kn - |       x
@@ -73,7 +73,6 @@ P  U  S  Č  P  S  N
    0kn - | x                 x
           -- -- -- -- -- -- -- -- -- -- -- --
            1  2  3  4  5  6  7  8  9 10 11 12
-```
 -----
 
 10.Kreiraj java program koji će pretražiti sve datoteke s ekstenzijama "csv" i "txt" unutar jednog direktorija (foldera) kako bi provjerio nalazi li se u njima definirana tekstualna fraza. Nazive datoteka u kojima se fraza nalazi, ispisat će na konzolu. Putanju direktorija za pretraživanje kao i tekstualnu frazu treba unijeti s konzole. Fraza usput može biti regular expression.
@@ -88,7 +87,6 @@ P  U  S  Č  P  S  N
 
 12.Napraviti program koji će omogućiti korisniku ispis statistike broja pojedinih riječi unutar datoteke koju odabere. Riječi trebaju biti poredane po abecedi i treba ignorirati velika/mala slova. Ispod se nalazi primjer ispisa:
 U datoteci XX nalaze se sljedece rijeci:
-```
 ------------------------
 Rijec (broj ponavljanja)
 ------------------------
@@ -101,7 +99,6 @@ su (110)
 trava (1)
 zeleno (2)
 ------------------------
-```
 -----
 
 13.Kreiraj program koji se sastoji od jedne klase i sučelja koje klasa nasljeđuje. Sučelje treba definirati dvije različite metode po vlastitom izboru. 
@@ -127,7 +124,7 @@ zeleno (2)
     Izvještaje mogu kreirati samo korisnici s admin ili superuser pravima.
 Sučelje za komunikaciju s korisnicima neka bude konzola, a podaci se trebaju spremati u tekstualne datoteke ili bazu podataka po izboru.
 Ovo su im najbitniji podatci
-```
+
 Zaposlenici
   ime
   prezime
@@ -144,4 +141,4 @@ Zadaci
   početni datum i vrijeme
   završni datum i vrijeme
   (napomena, početak i završetak ne znače nužno da je potrošeno vrijeme njihova razlika)
-```
+
