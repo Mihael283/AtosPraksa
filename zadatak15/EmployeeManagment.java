@@ -33,17 +33,6 @@ class Main extends TaskManagment{
 
     static ArrayList<Employee> emp_list = new ArrayList<Employee>();
 
-    /*static String task_name;
-    static String desc;
-    static String[] type = {"Bug","Task"};
-    static String[] current_status = {"Open","Closed","In progress"};
-    static String complexity;
-    static String time_spent;
-    static String starting_date_time;
-    static String end_date_time;
-    static ArrayList<Tasks> tasks = new ArrayList<Tasks>();
-    */
-
     static Scanner sc = new Scanner(System.in);
 			
     static File f = null;
@@ -148,7 +137,7 @@ class Main extends TaskManagment{
                 break;
             
             case 3:
-                //
+                ReportMenu(admin, superuser);
                 break;
             
             case 4:
@@ -164,7 +153,140 @@ class Main extends TaskManagment{
 
     }
 
+    public static void ReportMenu(boolean admin, boolean superuser) throws IOException{
+
+		do
+		{
+			System.out.println("\n*********Welcome to the Report Menu**********\n");
+
+
+			System.out.println("1). Count number of workers on a workplace\n" +
+								"2). Time spent per person\n" +
+								"3). Longest open task\n" +
+								"4). GO BACK\n");
+			System.out.println("Enter your choice : ");
+			int ch = sc.nextInt();
+			
+            if(admin == false && superuser == false){
+                System.out.println("You don't have permissions to enter this section!");
+                return;
+            }
+
+			switch(ch)
+			{
+			case 1:
+                countEmployeeWorkplace();
+                break;
+						
+			case 2:
+                timeSpent();
+                break;
+            
+            case 3:
+                longestOpenTask();
+                break;
+
+            case 5:
+                return;
+
+
+            default:
+                System.out.println("\nEnter a correct choice from the List :");
+                break;
+		    }
+        }
+		while(true);
+    }
+
+    public static void countEmployeeWorkplace(){
+
+        /*SELECT COUNT(oib), workplace FROM employee GROUP BY workplace;*/
+        try{
+
+            Statement stmt = conn.createStatement();
+            String SQL = "SELECT COUNT(oib), workplace FROM employee GROUP BY workplace;";
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            System.out.println(String.format("%-15s%-15s%-20s","Count","Workplace"));
+
+            String count;
+            while (rs.next()) {
+                count = rs.getString("COUNT(oib)");
+                workplace = rs.getString("workplace");
+                	        
+                System.out.println(String.format("%-15s%-15s",count,workplace));
+            }
+            
+       
+        }catch(Exception e) {
+            System.out.print("Connection to DB - Error:"+e);
+            System.exit(0);
+
+        }
+        
+
+    }
+
+    public static void timeSpent(){
+
+        try{
+
+            Statement stmt = conn.createStatement();
+            String SQL = "SELECT name,task_name,spent_time FROM tasks,employee WHERE oib_task = oib ORDER BY spent_time ASC";
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            System.out.println("\n--------------Task per Employee list---------------\n");
+
+            while (rs.next()) {
+                name = rs.getString("name");
+                task_name = rs.getString("task_name");
+                time_spent = rs.getString("spent_time");
+                
+                
+		        System.out.println(String.format("%-15s%-15s%-20s","Name","Task Name","Time Spent"));
+                System.out.println(String.format("%-15s%-15s%-20s",name,task_name,time_spent));
+            }
+            
+       
+        }catch(Exception e) {
+            System.out.print("Connection to DB - Error:"+e);
+            System.exit(0);
+
+        }
+        
+        
+
+    }
+
+    public static void longestOpenTask(){
+
+        try{
+
+            Statement stmt = conn.createStatement();
+            String SQL = "SELECT task_name, start_time FROM tasks ORDER BY start_time ASC LIMIT 1";
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+
+            while (rs.next()) {
+                task_name = rs.getString("task_name");
+                starting_date_time = rs.getString("start_time");
+                
     
+            }
+            System.out.println("Longest opet task is :"+task_name+" with start date "+starting_date_time);
+       
+        }catch(Exception e) {
+            System.out.print("Connection to DB - Error:"+e);
+            System.exit(0);
+
+        }
+        
+        
+
+    }
+
+    
+
 
     public static void EmployeeMenu(boolean admin, boolean superuser) throws IOException{
         try{
@@ -191,8 +313,6 @@ class Main extends TaskManagment{
 
         }
 
-
-
 		do
 		{
 			System.out.println("\n*********Welcome to the Employee Management System**********\n");
@@ -206,7 +326,8 @@ class Main extends TaskManagment{
 			System.out.println("Enter your choice : ");
 			int ch = sc.nextInt();
 			
-            if(admin == false && superuser == true && ch == 3 || ch == 4){
+            
+            if((admin == false) && (superuser == true) && (ch == 3 || ch == 4)){
                 do{
                     System.out.println("You don't have permissions to enter this section! Please repeat the input:");
                     ch = sc.nextInt();
@@ -226,7 +347,6 @@ class Main extends TaskManagment{
                 break;
 						
 			case 2:
-                System.out.println("Enter the Employee oib to search :");
                 listEmployee();
                 break;
             

@@ -64,7 +64,7 @@ public class TaskManagment {
             ResultSet rs = stmt.executeQuery(SQL);
     
             while (rs.next()) {
-                oib = rs.getString("oib");
+                oib = rs.getString("oib_task");
                 task_name = rs.getString("task_name");
                 desc = rs.getString("task_desc");
                 type = rs.getString("type");
@@ -90,23 +90,23 @@ public class TaskManagment {
 
 		do
 		{
-			System.out.println("\n*********Welcome to the Employee Management System**********\n");
+			System.out.println("\n*********Welcome to the Task Management System**********\n");
 
 
 			System.out.println("1). Add Task to the DataBase\n" +
 								"2). List Tasks\n" +
-								"3). Edit Employee details\n" +
-								"4). Delete Employee Details\n" +
+								"3). Edit Task details\n" +
+								"4). Delete Task\n" +
 								"5). GO BACK\n");
 			System.out.println("Enter your choice : ");
 			int ch = sc.nextInt();
 			
-            if(admin == false && superuser == true && ch == 3 || ch == 4){
+            if((admin == false) && (superuser == true) && (ch == 3 || ch == 4)){
                 do{
                     System.out.println("You don't have permissions to enter this section! Please repeat the input:");
                     ch = sc.nextInt();
                 }while(ch == 3 || ch == 4);
-            }else if(admin == false && superuser == false && ch !=2){
+            }else if((admin == false) && (superuser == false) && ch !=2){
                 do{
                     System.out.println("You don't have permissions to enter this section! Please repeat the input:");
                     ch = sc.nextInt();
@@ -121,18 +121,18 @@ public class TaskManagment {
                 break;
 						
 			case 2:
-                System.out.println("Enter the Employee oib to search :");
+                System.out.println("Enter the task name to search :");
                 listTasks();
                 break;
             
             case 3:
-                System.out.println("Enter the Employee oib to search :");
-
+                System.out.println("Enter the task name to search :");
+                editTask();
                 break;
 
             case 4:
-                System.out.println("Enter the Employee oib to search :");
-
+                System.out.println("Enter the task name to search :");
+                deleteTask();
                 break;
 
             case 5:
@@ -145,11 +145,6 @@ public class TaskManagment {
         }
 		while(true);
     }
-
-
-    public TaskManagment() {
-    }
-
 
     public static void addTask(){
 
@@ -174,7 +169,7 @@ public class TaskManagment {
 
         task_list.add(new Tasks(oib,task_name,desc,type,current_status,complexity,time_spent,starting_date_time,end_date_time));
 
-        String SQL = "INSERT INTO `tasks`(`oib`, `task_name`, `task_desc`, `type`, `current_status`, `complexity`, `spent_time`, `start_time`, `end_time`) VALUES ('"+oib+"','"+task_name+"','"+desc+"','"+type+"','"+current_status+"','"+complexity+"','"+time_spent+"','"+starting_date_time+"','"+end_date_time+"');";
+        String SQL = "INSERT INTO `tasks`(`oib_task`, `task_name`, `task_desc`, `type`, `current_status`, `complexity`, `spent_time`, `start_time`, `end_time`) VALUES ('"+oib+"','"+task_name+"','"+desc+"','"+type+"','"+current_status+"','"+complexity+"','"+time_spent+"','"+starting_date_time+"','"+end_date_time+"');";
                     
         PreparedStatement stmt;
 
@@ -190,7 +185,7 @@ public class TaskManagment {
 
     public static void listTasks(){
 
-        System.out.println("\n--------------Employee List---------------\n");
+        System.out.println("\n--------------Task List---------------\n");
 		System.out.println(String.format("%-15s%-15s%-15s%-15s%-15s%-15s%-25s%-25s%-10s","Name","Desc","Type","Status","Complexity","Time spent","Starting date","End date","OIB"));
 		for(Tasks t : task_list)
 		{
@@ -262,7 +257,7 @@ public class TaskManagment {
         }
         if(j == 0)
         {
-            System.out.println("\nEmployee Details are not available, Please enter a valid ID!!");
+            System.out.println("\nTask Details are not available, Please enter a valid name!!");
         }
     
     }
@@ -278,7 +273,7 @@ public class TaskManagment {
             {
                 if(t.task_name.equals(name))
                 {       
-                        SQL = "DELETE FROM `employee` WHERE `task_name` = '"+name+"' ;";
+                        SQL = "DELETE FROM `task` WHERE `task_name` = '"+name+"' ;";
                         sendQuery(SQL);
                         task_list.remove(t);
                         System.out.println("Task successfully deleted");
@@ -288,7 +283,7 @@ public class TaskManagment {
             }
             if(!trigger)
             {
-                System.out.println("\nEmployee Details are not available, Please enter a valid ID!!");
+                System.out.println("\nTask Details are not available, Please enter a valid name!!");
             }
         }catch(Exception ex){        
             System.out.println(ex);
