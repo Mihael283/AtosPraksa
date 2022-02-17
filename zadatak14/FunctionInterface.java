@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak14;
+package zadatak14;
 
 public interface FunctionInterface {
 	

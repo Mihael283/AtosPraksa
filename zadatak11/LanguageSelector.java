@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak11;
+package zadatak11;
 
 import java.util.*;
 
@@ -44,7 +44,7 @@ public class LanguageSelector {
         
         
         System.out.println("WELCOME!\nYou are about to see three lines of text from the most advanced translation bot ever :)");  
-        messages = ResourceBundle.getBundle("hr.atos.praksa.mihaelspanovic.zadatak11.MessagesBundle", currentLocale);
+        messages = ResourceBundle.getBundle("zadatak11.MessagesBundle", currentLocale);
         System.out.println(messages.getString("greetings"));         
         System.out.println(messages.getString("inquiry"));        
         System.out.println(messages.getString("farewell"));

@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak13;
+package zadatak13;
 
 class ProgrammingLanguage implements Language {
 		

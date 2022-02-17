@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak14;
+package zadatak14;
 
 public class Integration implements FunctionInterface{
 		public static String type = "";
@@ -30,7 +30,7 @@ public class Integration implements FunctionInterface{
 	    static double integrate(double lowerRange, double upperRange, double A, double B) {
 	    	int N = 2000; //Broj uzoraka
 	    	double h = (upperRange - lowerRange) / N;              // Iznos koraka
-	        double sum = 0.5 * (f(lowerRange,A,B) + f(upperRange,A,B));    // Površina
+	        double sum = 0.5 * (f(lowerRange,A,B) + f(upperRange,A,B));    // Povrï¿½ina
 	        for (int i = 1; i < N; i++) {
 	        	double x = lowerRange + h * i;
 	            sum = sum + f(x,A,B);

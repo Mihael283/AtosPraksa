@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak04;
+package zadatak04;
 
 public class EvenOrOdd {
 	public static void main(String args[])

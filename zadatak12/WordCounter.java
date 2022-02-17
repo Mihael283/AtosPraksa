@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak12;
+package zadatak12;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Map;

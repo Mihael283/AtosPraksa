@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak03;
+package zadatak03;
 
 public class HelloWorld {
 	public static void main(String args[]) {

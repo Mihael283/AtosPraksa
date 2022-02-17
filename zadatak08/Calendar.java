@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak08;
+package zadatak08;
 import java.util.*;
 
 

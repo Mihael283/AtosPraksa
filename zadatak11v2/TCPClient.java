@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak11v2;
+package zadatak11v2;
 
 import java.io.*;
 import java.net.*;
@@ -60,7 +60,7 @@ public class TCPClient {
 
         currentLocale = new Locale(language, country);
         
-        messages = ResourceBundle.getBundle("hr.atos.praksa.mihaelspanovic.zadatak11v2.MessagesBundle", currentLocale);
+        messages = ResourceBundle.getBundle("zadatak11v2.MessagesBundle", currentLocale);
         return messages;
     }
 

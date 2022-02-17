@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak09;
+package zadatak09;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

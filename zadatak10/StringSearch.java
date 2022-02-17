@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak10;
+package zadatak10;
 
 import java.io.BufferedReader;
 import java.io.File;

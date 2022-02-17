@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak07;
+package zadatak07;
 import java.util.*;
 
 public class DivBy6 {

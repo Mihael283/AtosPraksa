@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak11v2;
+package zadatak11v2;
 
 import java.net.*;
 import java.io.*;

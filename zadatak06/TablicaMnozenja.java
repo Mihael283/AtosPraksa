@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak06;
+package zadatak06;
 
 public class TablicaMnozenja {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package hr.atos.praksa.mihaelspanovic.zadatak05;
+package zadatak05;
 
 public class Counter {
 	public static void main(String args[])
