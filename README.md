@@ -16,7 +16,6 @@ Atos Praksa - Mihael Španović
     - ukoliko je broj veći od 18, brojač treba umanjiti za 1
     - ukoliko je broj djeljiv s 20, treba prekinuti procesuiranje tog broja i prijeći na sljedeći
     - ukoliko je broj jednak ili veći od 75, treba prekinuti procesuiranje intervala te ispisati vrijednost brojača
------
 
 6.Kreiraj program koji će koristeći for petlje automatizirati ispis tablice množenja u ovom obliku, te umjesto "Ime" treba ispisati ime uneseno s konzole i pri tome pripaziti da zadnje slovo imena bude poravnato s desnim rubom tablice.
 
