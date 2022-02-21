@@ -4,4 +4,6 @@ Notes for future use:
 Creating object file with headers:
 gcc -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak3/include/Student/ -c Professor.cpp -fpic
 
+Compile with shared library:
+gcc -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak3/include/Professor -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak3/include/Student -L. -Wl,  main.cpp -o zadatak3 -lProfessor -lStudent
 
