@@ -1,0 +1,7 @@
+Notes for future use:
+
+
+Creating object file with headers:
+gcc -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak3/include/Student/ -c Professor.cpp -fpic
+
+

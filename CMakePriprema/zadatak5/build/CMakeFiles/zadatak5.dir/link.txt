@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++-9  -g  -rdynamic CMakeFiles/zadatak5.dir/src/main.cpp.o CMakeFiles/zadatak5.dir/src/Student.cpp.o CMakeFiles/zadatak5.dir/src/Professor.cpp.o  -o zadatak5 
