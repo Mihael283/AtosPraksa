@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9  -DProfessor_EXPORTS -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/include  -g -fPIC   -o CMakeFiles/Professor.dir/src/Professor.cpp.o -c /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/src/Professor.cpp",
+  "file": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/src/Professor.cpp"
+}
+]
