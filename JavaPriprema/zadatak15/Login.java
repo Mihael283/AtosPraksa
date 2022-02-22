@@ -19,7 +19,7 @@ public class Login {
         System.out.println("Enter Password : ");
         String password = in.next();
 
-        int[] permissions = {0 , 0};
+        int[] permissions = {0 , 0}; // Default 0 0 znaci da nema ni superuser ni admin pravo suprotno je 1 1
 
                 // Create SQL Query
         Statement stmt = conn.createStatement();
