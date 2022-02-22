@@ -34,62 +34,14 @@ class Main extends TaskManagment{
     static ArrayList<Employee> emp_list = new ArrayList<Employee>();
 
     static Scanner sc = new Scanner(System.in);
-			
-    static File f = null;
-    static Connection conn = null;
-
-    public static int[] login(Scanner in)
-	{	try{
-        System.out.println("\nEnter Username : ");
-        String username = in.next();
-
-        System.out.println("Enter Password : ");
-        String password = in.next();
-
-        String databaseUsername = "";
-        String databasePassword = "";
-
-        int[] permissions = {0 , 0};
-
-                // Create SQL Query
-        Statement stmt = conn.createStatement();
-        String SQL = "SELECT * FROM users WHERE username='" + username + "' && password='" + password+ "'";
-
-        ResultSet rs = stmt.executeQuery(SQL);
-
-        while (rs.next()) {
-            databaseUsername = rs.getString("username");
-            databasePassword = rs.getString("password");
-            permissions[0] = rs.getInt("is_admin");
-            permissions[1] = rs.getInt("is_superuser");
-
-        }
-
-        if (username.equals(databaseUsername) && password.equals(databasePassword)) {
-            System.out.println("Successful Login!");
-            return permissions;
-
-        } else {
-            System.out.println("Incorrect Password! Program will now exit.");
-            System.exit(0);
-        }
-
-        }catch(Exception e) {
-            System.out.print("Connection to DB - Error:"+e);
-            System.exit(0);
-
-        }
-
-        return null;
-	}
-
     
+    static Connection conn = null;
+    static File f = null;
 
-    public static void main(String[] args) throws ClassNotFoundException, IOException
-	{
-
-        Class.forName("com.mysql.jdbc.Driver");
+    public static Connection connectToDB() throws ClassNotFoundException{
+   
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost/task15","root", "");
         } catch (SQLException e) {         
             System.out.print("Connection to DB - Error:"+e);
@@ -97,16 +49,26 @@ class Main extends TaskManagment{
         }
         System.out.print("Database is connected !");
         
-        int[] permissions;
-        Scanner in = new Scanner(System.in);
-        permissions = login(in);
+        return conn;
+
+    }
+    
+
+    public static void main(String[] args) throws ClassNotFoundException, IOException
+	{
+
+        
+        Connection conn = connectToDB(); //Connect to DataBase
+
+        Login loginObj = new Login();   //Login handler
+        int[] permissions = loginObj.login(sc,conn); //Return permissions which are defined by 1 or 0
 
         boolean admin = false;
         boolean superuser = false;
-        if(permissions[0]>=1){
+
+        if(permissions[0]>=1){  //simple permission asigners
             admin = true;
         }
-
         if(permissions[1]>=1){
             superuser = true;
         }

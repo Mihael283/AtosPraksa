@@ -40,9 +40,7 @@ public class TaskManagment {
             this.starting_date_time = starting_date_time;
             this.end_date_time = end_date_time;
         }
-    
-  
-      
+     
     }
 
 
