@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build/CMakeFiles /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build/CMakeFiles /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build/Student/CMakeFiles/progress.marks
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f CMakeFiles/Makefile2 Student/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f CMakeFiles/Makefile2 Student/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,84 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f CMakeFiles/Makefile2 Student/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f CMakeFiles/Makefile2 Student/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named zadatak7
+# Convenience name for target.
+Student/CMakeFiles/Student.dir/rule:
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f CMakeFiles/Makefile2 Student/CMakeFiles/Student.dir/rule
+.PHONY : Student/CMakeFiles/Student.dir/rule
 
-# Build rule for target.
-zadatak7: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 zadatak7
-.PHONY : zadatak7
+# Convenience name for target.
+Student: Student/CMakeFiles/Student.dir/rule
 
-# fast build rule for target.
-zadatak7/fast:
-	$(MAKE) -f CMakeFiles/zadatak7.dir/build.make CMakeFiles/zadatak7.dir/build
-.PHONY : zadatak7/fast
-
-#=============================================================================
-# Target rules for targets named Student
-
-# Build rule for target.
-Student: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Student
 .PHONY : Student
 
 # fast build rule for target.
 Student/fast:
-	$(MAKE) -f Student/CMakeFiles/Student.dir/build.make Student/CMakeFiles/Student.dir/build
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f Student/CMakeFiles/Student.dir/build.make Student/CMakeFiles/Student.dir/build
 .PHONY : Student/fast
 
-#=============================================================================
-# Target rules for targets named Professor
+src/Student.o: src/Student.cpp.o
 
-# Build rule for target.
-Professor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Professor
-.PHONY : Professor
-
-# fast build rule for target.
-Professor/fast:
-	$(MAKE) -f Professor/CMakeFiles/Professor.dir/build.make Professor/CMakeFiles/Professor.dir/build
-.PHONY : Professor/fast
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
+.PHONY : src/Student.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/zadatak7.dir/build.make CMakeFiles/zadatak7.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/Student.cpp.o:
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f Student/CMakeFiles/Student.dir/build.make Student/CMakeFiles/Student.dir/src/Student.cpp.o
+.PHONY : src/Student.cpp.o
 
-src/main.i: src/main.cpp.i
+src/Student.i: src/Student.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/Student.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/zadatak7.dir/build.make CMakeFiles/zadatak7.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/Student.cpp.i:
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f Student/CMakeFiles/Student.dir/build.make Student/CMakeFiles/Student.dir/src/Student.cpp.i
+.PHONY : src/Student.cpp.i
 
-src/main.s: src/main.cpp.s
+src/Student.s: src/Student.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/Student.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/zadatak7.dir/build.make CMakeFiles/zadatak7.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/Student.cpp.s:
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(MAKE) -f Student/CMakeFiles/Student.dir/build.make Student/CMakeFiles/Student.dir/src/Student.cpp.s
+.PHONY : src/Student.cpp.s
 
 # Help Target
 help:
@@ -184,12 +160,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... zadatak7"
 	@echo "... Student"
-	@echo "... Professor"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/Student.o"
+	@echo "... src/Student.i"
+	@echo "... src/Student.s"
 .PHONY : help
 
 
@@ -201,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

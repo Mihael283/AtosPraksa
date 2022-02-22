@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-set(PROJECT_NAME Professor)  
-set(LIBRARY_NAME Professor)
+set(PROJECT_NAME Student)  
+set(LIBRARY_NAME Student)
 set(LIBRARY_HEADERS_DIR include/${LIBRARY_NAME})  
-set(LIBRARY_HEADERS ${LIBRARY_HEADERS_DIR}/Professor.h)
+set(LIBRARY_HEADERS ${LIBRARY_HEADERS_DIR}/Student.h)
 set(LIBRARY_SOURCE_DIR src)
-set(LIBRARY_SOURCE ${LIBRARY_SOURCE_DIR}/Professor.cpp)
+set(LIBRARY_SOURCE ${LIBRARY_SOURCE_DIR}/Student.cpp)
     
 project(${PROJECT_NAME})
 
