@@ -2,11 +2,6 @@
 CMakeTmp/
 *.dir
 
-
-
 Testing/
 .cmake/
-.DartConfiguration
-.CPackConfig
-.CTestTestfile
-.compile_commands
+
