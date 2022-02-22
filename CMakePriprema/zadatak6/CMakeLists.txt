@@ -4,19 +4,12 @@ project(Zadatak6 VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-
-
-
-file(GLOB MAIN "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak6/src/main.cpp")
-
-#add_library(Professor SHARED1 src/Professor.cpp)
-#add_library(Student SHARED2 src/Student.cpp)
-
-#install(TARGETS ${SHARED1} ${SHARED2} DESTINATION /lib)
-
+set(SOURCE_DIR src)
+set(SOURCE ${SOURCE_DIR}/main.cpp)
+    
 find_library(LIBPROF libProfessor.so)
 find_library(LIBSTUD libStudent.so)
-add_executable(zadatak6 ${MAIN})
+add_executable(zadatak6 ${SOURCE})
 target_link_libraries(zadatak6 PRIVATE ${LIBPROF} ${LIBSTUD})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
