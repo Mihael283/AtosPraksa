@@ -5,14 +5,13 @@ include(CTest)
 enable_testing()
 
 
+set(SOURCE_DIR src)
+set(SOURCEMAIN ${SOURCE_DIR}/main.cpp)
+set(SOURCEPROF ${SOURCE_DIR}/Professor.cpp)
+set(SOURCESTUD ${SOURCE_DIR}/Student.cpp)
+    
+add_executable(zadatak5 ${SOURCEMAIN} ${SOURCEPROF} ${SOURCESTUD})
 
-set(HEADER1 "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak5/include/Professor/")
-set(HEADER2 "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak5/include/Student/")
-file(GLOB MAIN "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak5/src/main.cpp")
-file(GLOB STUDENT "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak5/src/Student.cpp")
-file(GLOB PROF "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak5/src/Professor.cpp")
-add_executable(zadatak5 ${MAIN} ${STUDENT} ${PROF} ${HEADER1} ${HEADER2})
-target_link_libraries(zadatak5)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

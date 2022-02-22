@@ -1,7 +1,17 @@
 [
 {
   "directory": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -o CMakeFiles/zadatak7.dir/src/main.cpp.o -c /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/src/main.cpp",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/include -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/include  -g   -o CMakeFiles/zadatak7.dir/src/main.cpp.o -c /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/src/main.cpp",
   "file": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/src/main.cpp"
+},
+{
+  "directory": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build/Student",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/include/Student -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/include  -g   -o CMakeFiles/Student.dir/src/Student.cpp.o -c /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/src/Student.cpp",
+  "file": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/src/Student.cpp"
+},
+{
+  "directory": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/build/Professor",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/include/Professor -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/include  -g   -o CMakeFiles/Professor.dir/src/Professor.cpp.o -c /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/src/Professor.cpp",
+  "file": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Professor/src/Professor.cpp"
 }
 ]

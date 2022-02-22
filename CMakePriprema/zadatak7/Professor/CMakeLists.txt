@@ -1,17 +1,25 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(Professor VERSION 0.1.0)
 
-include(CTest)
-enable_testing()
+set(PROJECT_NAME Professor)  
+set(LIBRARY_NAME Professor)
+set(LIBRARY_HEADERS_DIR include/${LIBRARY_NAME})  
+set(LIBRARY_HEADERS ${LIBRARY_HEADERS_DIR}/Professor.h)
+set(LIBRARY_SOURCE_DIR src)
+set(LIBRARY_SOURCE ${LIBRARY_SOURCE_DIR}/Professor.cpp)
+    
+project(${PROJECT_NAME})
 
-file(GLOB SOURCES src/*.cpp)
+add_library(${LIBRARY_NAME} STATIC
+    ${LIBRARY_HEADERS}
+    ${LIBRARY_SOURCE}
+)
 
-include_directories(include)
+target_include_directories(${LIBRARY_NAME} PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${LIBRARY_NAME}>
+    $<INSTALL_INTERFACE:include/${LIBRARY_NAME}>
+)
 
-add_library(${PROJECT_NAME} SHARED ${SOURCES})
-
-install(TARGETS ${PROJECT_NAME} DESTINATION lib/${PROJECT_NAME})
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+target_include_directories(${LIBRARY_NAME} PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)

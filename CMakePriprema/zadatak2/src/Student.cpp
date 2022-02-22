@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include </home/mikeee/Documents/zadatak2/include/Student/Student.h>
+#include "Student.h"
 using namespace std;
 
 

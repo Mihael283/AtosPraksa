@@ -1,2 +1,7 @@
 .vscode/
-CMakeFiles/
+CMakeTmp/
+*.dir
+
+Testing/
+.cmake/
+

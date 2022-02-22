@@ -1,17 +1,20 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(Zadatak7 VERSION 0.1.0)
 
-include(CTest)
-enable_testing()
+set(PROJECT_NAME Zadatak7) 
+set(SOURCE_DIR src)   
 
-file(GLOB MAIN "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/src/main.cpp")
+set(SOURCE ${SOURCE_DIR}/main.cpp)
+    
+set(LIBRARIES 
+    Student
+    Professor
+)
 
-find_library(LIBPROF libProfessor.so)
-find_library(LIBSTUD libStudent.so)
-add_executable(zadatak7 ${MAIN})
-target_link_libraries(zadatak7 PRIVATE ${LIBPROF} ${LIBSTUD})
+project(${PROJECT_NAME})
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+add_executable(zadatak7 ${SOURCE})
 
+add_subdirectory("Student")
+add_subdirectory("Professor")
+
+target_link_libraries(zadatak7 ${LIBRARIES})
