@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9  -DStudent_EXPORTS -I/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/include  -g -fPIC   -o CMakeFiles/Student.dir/src/Student.cpp.o -c /home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/src/Student.cpp",
+  "file": "/home/mihael/Documents/GitHub/AtosPraksa/CMakePriprema/zadatak7/Student/src/Student.cpp"
+}
+]

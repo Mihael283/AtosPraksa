@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++-9 -fPIC -g  -shared -Wl,-soname,libStudent.so -o libStudent.so CMakeFiles/Student.dir/src/Student.cpp.o 

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
-#include "../include/Professor/Professor.h"
-#include "../include/Student/Student.h"
+#include "../Professor/include/Professor/Professor.h"
+#include "../Student/include/Student/Student.h"
 using namespace std;
 
 
