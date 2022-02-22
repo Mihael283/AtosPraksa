@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
-#include </home/mikeee/Documents/zadatak2/src/Student.cpp>
-#include </home/mikeee/Documents/zadatak2/src/Professor.cpp>
+#include "Student.cpp"
+#include "Professor.cpp"
 using namespace std;
 
 
