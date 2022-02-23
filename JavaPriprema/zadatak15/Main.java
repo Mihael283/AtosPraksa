@@ -1,10 +1,11 @@
 package zadatak15;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         Scanner sc = new Scanner(System.in);
         EmployeeManagment employee_obj = new EmployeeManagment();
         Connection conn = employee_obj.connectToDB();
@@ -35,8 +36,8 @@ public class Main {
 
             switch (ch) {
                 case 1:
-                    EmployeeManagment employeeMngmt_obj = new EmployeeManagment()
-                    employeeMngmt_obj.EmployeeMenu(admin, superuser);
+                    EmployeeManagment employeeMngmt_obj = new EmployeeManagment();
+                    employeeMngmt_obj.EmployeeMenu(admin, superuser,conn);
                     break;
 
                 case 2:

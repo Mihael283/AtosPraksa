@@ -26,9 +26,9 @@ public class EmployeeManagment{
         return conn;
 
     }
-    
+
        
-    public void EmployeeMenu(boolean admin, boolean superuser) throws IOException{
+    public void EmployeeMenu(boolean admin, boolean superuser, Connection conn) throws IOException{
         
         try{
 
