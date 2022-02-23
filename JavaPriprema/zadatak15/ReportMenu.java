@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ReportMenu {
 
-    public void openReportMenu(boolean admin, boolean superuser, Connection conn, Scanner sc) throws IOException{
+    public void openReportMenu(boolean admin, boolean superuser, Connection conn, Scanner sc) throws IOException{ //Menu
         
 		do
 		{          
@@ -55,7 +55,7 @@ public class ReportMenu {
 
     }
 
-    public static void countEmployeeWorkplace(Connection conn){
+    public static void countEmployeeWorkplace(Connection conn){             //Ispisuje broj radnika na pojedinom radnom mjestu
         String workplace;
         /*SELECT COUNT(oib), workplace FROM employee GROUP BY workplace;*/
         try{
@@ -84,7 +84,7 @@ public class ReportMenu {
 
     }
 
-    public static void timeSpent(Connection conn){
+    public static void timeSpent(Connection conn){ //Ispis zdataka po potrošenom vremenu
 
         String name;
         String task_name;
@@ -118,7 +118,7 @@ public class ReportMenu {
 
     }
 
-    public static void longestOpenTask(Connection conn){
+    public static void longestOpenTask(Connection conn){ //ispis zadatka koji je najduže otvoren
 
         String task_name ="";
         String starting_date_time="";

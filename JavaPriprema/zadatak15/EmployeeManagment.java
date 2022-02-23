@@ -4,41 +4,15 @@ import java.util.*;
 import java.io.*;
 import java.sql.*;
 
-class Employee{
-    String name;
-    String last_name;
-    String workplace;
-    String oib;
-    public String lastname;
 
+public class EmployeeManagment{
 
-    public Employee(String name, String last_name, String workplace, String oib) {
-        this.name = name;
-        this.last_name = last_name;
-        this.workplace = workplace;
-        this.oib = oib;
-    }
-
-    
-}
-
-
-
-class Main extends TaskManagment{
-
-    static String name;
-    static String last_name;
-    static String workplace;
-    static String oib;
-
-    static ArrayList<Employee> emp_list = new ArrayList<Employee>();
-
-    static Scanner sc = new Scanner(System.in);
-    
-    static Connection conn = null;
-    static File f = null;
-
-    public static Connection connectToDB() throws ClassNotFoundException{
+    ArrayList<Employee> emp_list = new ArrayList<Employee>();
+ 
+    public Connection conn = null;
+    public File f = null;
+    public Scanner sc = new Scanner(System.in);
+    public Connection connectToDB() throws ClassNotFoundException{
    
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -53,75 +27,9 @@ class Main extends TaskManagment{
 
     }
     
-
-    public static void main(String[] args) throws ClassNotFoundException, IOException
-	{
-
+       
+    public void EmployeeMenu(boolean admin, boolean superuser) throws IOException{
         
-        Connection conn = connectToDB(); //Connect to DataBase
-
-        Login loginObj = new Login();   //Login handler
-        int[] permissions = loginObj.login(sc,conn); //Return permissions which are defined by 1 or 0
-
-        boolean admin = false;
-        boolean superuser = false;
-
-        if(permissions[0]>=1){  //simple permission asigners
-            admin = true;
-        }
-        if(permissions[1]>=1){
-            superuser = true;
-        }
-
-        
-        
-
-        do                                                          //Simple menu
-		{
-			System.out.println("\n*********Welcome**********\n");
-
-
-			System.out.println("1). Employee Managment\n" +
-								"2). Task Managment\n" +
-								"3). Reports\n" +
-								"4). EXIT\n");
-			System.out.println("Enter your choice : ");
-			int ch = sc.nextInt();
-			
-			switch(ch)
-			{
-			case 1:
-                EmployeeMenu(admin, superuser);
-                break;
-						
-			case 2:
-                TaskMenu(admin, superuser, conn);
-                break;
-            
-            case 3:
-                ReportMenu reportMenu_obj = new ReportMenu();
-                reportMenu_obj.openReportMenu(admin, superuser, conn,sc);
-                break;
-            
-            case 4:
-                System.exit(0);
-                break;
-
-            default:
-                System.out.println("\nEnter a correct choice from the List :");
-                break;
-		    }
-        }
-		while(true);
-
-    }
-
-    
-
-    
-
-
-    public static void EmployeeMenu(boolean admin, boolean superuser) throws IOException{
         try{
 
             Statement stmt = conn.createStatement();
@@ -130,16 +38,15 @@ class Main extends TaskManagment{
             ResultSet rs = stmt.executeQuery(SQL);
     
             while (rs.next()) {
-                name = rs.getString("name");
-                last_name = rs.getString("last_name");
-                workplace = rs.getString("workplace");
-                oib = rs.getString("oib");
-                emp_list.add(new Employee(name,last_name,workplace,oib));
+                Employee temp = new Employee();
+                temp.setName(rs.getString("name"));
+                temp.setLast_name(rs.getString("last_name"));
+                temp.setWorkplace(rs.getString("workplace"));
+                temp.setOib(rs.getString("oib"));
+
+                emp_list.add(temp);
     
-            }
-    
-            
-    
+            }  
         }catch(Exception e) {
             System.out.print("Connection to DB - Error:"+e);
             System.exit(0);
@@ -205,21 +112,17 @@ class Main extends TaskManagment{
 		while(true);
     }
 
+    public void addEmployee(){
 
-    public static void addEmployee(){
+        Employee temp = new Employee();
+        temp.setName(sc.next());
+        temp.setLast_name(sc.next());
+        temp.setWorkplace(sc.next());
+        temp.setOib(sc.next());
 
-        System.out.println("Enter Name :");
-        name = sc.next();
-        System.out.println("Enter LastName :");
-        last_name = sc.next();
-        System.out.println("Enter Workplace :");
-        workplace = sc.next();
-        System.out.println("Enter Oib :");
-        oib = sc.next();
+        emp_list.add(temp);
 
-        emp_list.add(new Employee(name,last_name,workplace,oib));
-
-        String SQL = "INSERT INTO `employee`(`name`, `last_name`, `workplace`, `oib`) VALUES ('"+name+"','"+last_name+"','"+workplace+"','"+oib+"');";
+        String SQL = "INSERT INTO `employee`(`name`, `last_name`, `workplace`, `oib`) VALUES ('"+temp.getName()+"','"+temp.getLast_name()+"','"+temp.getWorkplace()+"','"+temp.getOib()+"');";
         PreparedStatement stmt;
 
         try {
@@ -234,7 +137,7 @@ class Main extends TaskManagment{
 
     }
 
-    public static void listEmployee(){
+    public void listEmployee(){
 
         System.out.println("\n--------------Employee List---------------\n");
 		System.out.println(String.format("%-15s%-15s%-20s%-10s","Name","Last Name","Workplace","OIB"));
@@ -244,12 +147,11 @@ class Main extends TaskManagment{
 		}
     }
 
-    public static void editEmployee(){
+    public void editEmployee(){
 
-        oib = sc.next();
+        String oib = sc.next();
         int j = 0;
 
-        PreparedStatement stmt;
         String SQL="";
         
         
@@ -314,9 +216,9 @@ class Main extends TaskManagment{
     
     }
 
-    public static void deleteEmployee(){
+    public void deleteEmployee(){
 
-        oib = sc.next();
+        String oib = sc.next();
 
         boolean trigger = false;
         String SQL;
@@ -343,7 +245,7 @@ class Main extends TaskManagment{
 
     }
 
-    public static void sendQuery(String SQL){
+    public void sendQuery(String SQL){
 
         PreparedStatement stmt;
 
