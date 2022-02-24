@@ -1,0 +1,11 @@
+javac -h . TestJNIPrimitiveArray.java
+#Napravi header i class file
+
+gcc -c -fPIC -I${JAVA_HOME}/include -I${JAVA_HOME}/include/linux TestJNIPrimitiveArray.c -o TestJNIPrimitiveArray.o
+#Compile c file i kreiraj object file
+
+gcc -shared -fPIC -o libnative.so TestJNIPrimitiveArray.o -lc
+#Stvori shared library
+
+java -cp . -Djava.library.path=. TestJNIPrimitiveArray
+#Run
