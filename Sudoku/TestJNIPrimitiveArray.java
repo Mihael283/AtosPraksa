@@ -3,8 +3,6 @@ public class TestJNIPrimitiveArray {
         System.loadLibrary("native"); // myjni.dll (Windows) or libmyjni.so (Unixes)
     }
   
-    // Declare a native method sumAndAverage() that receives an int[] and
-    //  return a double[2] array with [0] as sum and [1] as average
     private native int[] sumAndAverage(int[] numbers);
   
     // Test Driver
